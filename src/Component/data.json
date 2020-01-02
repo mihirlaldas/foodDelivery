@@ -1,0 +1,88 @@
+[
+    {
+        "restro": "WOW!! China",
+        "menu": [
+            {
+                "name": "chilli chicken",
+                "description": "Chicken sauted with fresh onion, capsicum, beans. Garnish with toasted sesame seeds.",
+                "image": "https://pupswithchopsticks.com/wp-content/uploads/chilli-chicken-thumbnail.jpg",
+                "price": 150,
+                "category": "non-veg",
+                "cod": true,
+
+                "rating": 4
+            },
+            {
+                "name": "chicken momo",
+                "description": "minced chicken, with spring onions, wrapped and steamed",
+                "image": "https://www.whiskaffair.com/wp-content/uploads/2013/08/Chicken-MoMo-1.jpg",
+                "price": 90,
+                "category": "non-veg",
+                "cod": false,
+
+                "rating": 3.8
+            },
+            {
+                "name": "thukpa",
+                "description": "chicken , vegetable soup tibetan style",
+                "image": "http://www.ndtv.com/cooks/images/ladakhi%20chicken%20thukpa-620.jpg",
+                "price": 120,
+                "category": "non-veg",
+                "cod": true,
+
+                "rating": 4.5
+            },
+            {
+                "name": "hakka noodles",
+                "description": "Indo chinese hakka noodles recipe made with mixed vegetables like cabbage, carrots and bell pepper.",
+                "image": "https://i1.wp.com/vegecravings.com/wp-content/uploads/2017/03/veg-hakka-noodles-recipe-with-step-by-step-instructions.jpg?fit=1838%2C1493&quality=30&strip=all&ssl=1",
+                "price": 100,
+                "category": "non-veg",
+                "cod": false,
+
+                "rating": 4.3
+            }
+        ]
+    },
+    {
+        "restro": "Saatvik",
+        "menu": [
+            {
+                "name": "Kashmiri pulao",
+                "description": "Akashmiri pulao is aromatic, mild and faintly sweet in taste.",
+                "image": "https://i2.wp.com/www.vegrecipesofindia.com/wp-content/uploads/2013/05/kashmiri-pulao-recipe-1.jpg",
+                "price": 120,
+                "cod": true,
+                "category": "veg",
+                "rating": 4
+            },
+            {
+                "name": "Rajma Chawal in bowl",
+                "description": "Kidney beans (rajma) simmered in an onion-tomato gravy with common Indian spices. Paired best with steam rice.",
+                "image": "https://i.pinimg.com/736x/eb/3b/d9/eb3bd9efbeb2ce9419ed44b1e7c09c4b.jpg",
+                "price": 130,
+                "category": "veg",
+                "cod": true,
+                "rating": 3.8
+            },
+            {
+                "name": "Dal makhni",
+                "description": "Creamy & buttery Dal Makhani is one of India's most special and popular dal.",
+                "image": "https://www.cookwithmanali.com/wp-content/uploads/2019/04/Restaurant-Style-Dal-Makhani.jpg",
+                "price": 80,
+                "category": "veg",
+                "cod": true,
+                "rating": 2.8
+            },
+            {
+                "name": "veg thali",
+                "description": "VEG THALI (Rice, Roti 2pc, Dal Fry, Mix Veg, Aloo Jeera, Salad, Pickle, Raita & Papad)",
+                "image": "https://coffeewoffee.in/wp-content/uploads/2019/03/veg-thali.jpg",
+                "price": 100,
+                "category": "veg",
+                "cod": false,
+                "rating": 3
+            }
+        ]
+    }
+]
