@@ -20,7 +20,7 @@ export class Home extends Component {
         if (this.state.count > 0) {
             let total = 0;
             this.state.orders.forEach(ele => {
-                total += ele.price;
+                total += Number(ele.price);
             });
 
             this.props.placeOrder(this.state.orders);

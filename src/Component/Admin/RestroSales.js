@@ -18,7 +18,8 @@ export class RestroSales extends Component {
         let total = 0;
         if (this.props.orders.length > 0) {
             this.props.orders.forEach(ele => {
-                if (ele.restro === this.state.restro) total += ele.price;
+                if (ele.restro === this.state.restro)
+                    total += Number(ele.price);
                 console.log(ele.price);
             });
         }

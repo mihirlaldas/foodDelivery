@@ -6,7 +6,7 @@ function OrderHistory(props) {
     let total = 0;
     if (props.orders.length > 0) {
         props.orders.forEach(ele => {
-            total += ele.price;
+            total += Number(ele.price);
             console.log(ele.price);
         });
     }
