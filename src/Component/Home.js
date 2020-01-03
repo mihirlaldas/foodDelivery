@@ -65,7 +65,7 @@ export class Home extends Component {
                 {this.props.data.map(ele => {
                     return (
                         <div>
-                            <h5 className="display-4 bg-primary text-white text-center p-5">
+                            <h5 className="display-4 bg-primary text-white text-center p-2">
                                 {ele.restro}
                             </h5>
                             <div className="row" key={ele.restro}>

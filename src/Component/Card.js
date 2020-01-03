@@ -17,24 +17,30 @@ function Card(props) {
                     <div className="col-6">
                         <img src={image} className="img-fluid " />
                         <p className="text-muted m-0">{category}</p>
-                        <p className="m-0">
-                            Min ₹50 <strong>*</strong> Up to 30 min
-                        </p>
                     </div>
-                    <div className="col-4 text-left">
+                    <div className="col-6 text-left">
                         <h3 className="text-danger">{name}</h3>
 
-                        <p className="text-muted  m-0">Price: Rs.{price}</p>
+                        <p className="text-success  m-0">Price: Rs.{price}</p>
 
-                        {cod ? <p>COD available</p> : <p>COD not available</p>}
-                    </div>
-                    <div className="col-2" style={{ textAlign: "right" }}>
+                        {cod ? (
+                            <p>COD available</p>
+                        ) : (
+                            <p className="text-muted">COD not available</p>
+                        )}
                         <h3>
                             <span className="badge badge-success">
                                 {rating}
                             </span>
                         </h3>
                     </div>
+                    {/* <div className="col-2" style={{ textAlign: "right" }}>
+                        <h3>
+                            <span className="badge badge-success">
+                                {rating}
+                            </span>
+                        </h3>
+                    </div> */}
                 </div>
 
                 <div className="card-footer ">
