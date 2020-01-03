@@ -6,7 +6,8 @@ class AddRestaurant extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            name: "",
+            restroAdded: false
         };
     }
     handleChange = e => {
@@ -19,11 +20,22 @@ class AddRestaurant extends Component {
         e.preventDefault();
         const newRestro = { restro: this.state.name, menu: [] };
         this.props.addRestaurant(newRestro);
+        this.setState({
+            restroAdded: true,
+            name: ""
+        });
     };
     render() {
         return (
             <div>
                 <h1>add restaurant</h1>
+                {this.state.restroAdded ? (
+                    <h3 className="display-5 bg-light text-success">
+                        Restautant added successfully
+                    </h3>
+                ) : (
+                    ""
+                )}
                 <form
                     onSubmit={this.handleSubmit}
                     className="form-group border bg-light m-2 w-50 m-auto p-2 text-left"
@@ -34,6 +46,7 @@ class AddRestaurant extends Component {
                         name="name"
                         className="form-control"
                         maxLength="28"
+                        value={this.state.name}
                         onChange={this.handleChange}
                     />
                     <button

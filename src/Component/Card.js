@@ -10,7 +10,6 @@ function Card(props) {
         rating,
         image
     } = props.data;
-    console.log(cod);
     return (
         <div className="col-md-4" key={name}>
             <div className="card container m-2">
@@ -40,7 +39,12 @@ function Card(props) {
 
                 <div className="card-footer ">
                     <p className="text-muted m-0 text-left">{description}</p>
-                    <button className="btn d-flex flex-end">order now</button>
+                    <button
+                        className="btn d-flex flex-end"
+                        onClick={() => props.add(props.restro, name, price)}
+                    >
+                        Add to cart
+                    </button>
                 </div>
             </div>
         </div>

@@ -6,18 +6,30 @@ import AddRestaurant from "../Component/Admin/AddRestaurant";
 import AddToMenu from "../Component/Admin/AddToMenu";
 import Admin from "../Component/Admin/Dashboard";
 import Login from "../Component/Admin/Login";
+import OrderHistory from "../Component/OrderHistory";
+import RestroSales from "../Component/Admin/RestroSales";
 function Routes(props) {
     console.log(props);
     return (
         <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
-
+            <Route path="/orders" component={OrderHistory} />
             <Route
                 path="/dashboard"
                 render={routeData =>
                     props.isLoggedIn ? (
                         <Admin {...routeData} />
+                    ) : (
+                        <Redirect to="/login" />
+                    )
+                }
+            />
+            <Route
+                path="/restro-sales"
+                render={routeData =>
+                    props.isLoggedIn ? (
+                        <RestroSales {...routeData} />
                     ) : (
                         <Redirect to="/login" />
                     )

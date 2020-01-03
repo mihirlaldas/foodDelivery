@@ -40,6 +40,7 @@ class Login extends Component {
                         maxLength="20"
                         onChange={this.handleChange}
                     />
+
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
@@ -48,6 +49,9 @@ class Login extends Component {
                         className="form-control"
                         onChange={this.handleChange}
                     />
+                    <small className="text-success">
+                        username:admin, password:admin
+                    </small>
                     <button
                         type="submit"
                         className="btn btn-primary p-2 m-2 btn-block"
@@ -62,7 +66,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.isLoggedIn
+        isLoggedIn: state.isLoggedIn,
+        data: state.data
     };
 };
 

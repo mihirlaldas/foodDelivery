@@ -1,6 +1,14 @@
-import { AUTH, ADD_RESTAURANT, ADD_MENU_ITEM, LOAD_DEFAULT } from "./action";
+import {
+    AUTH,
+    ADD_RESTAURANT,
+    ADD_MENU_ITEM,
+    LOAD_DEFAULT,
+    PLACE_ORDER,
+    LOAD_ORDERS
+} from "./action";
 import React from "react";
 const initialState = {
+    orders: [],
     data: [],
     adminAuth: { username: "admin", password: "admin" },
     isLoggedIn: false
@@ -23,6 +31,12 @@ const adminReducer = (state = initialState, action) => {
                 data: action.payload
             };
         }
+        case LOAD_ORDERS: {
+            return {
+                ...state,
+                orders: action.payload
+            };
+        }
         case ADD_RESTAURANT: {
             return {
                 ...state,
@@ -31,11 +45,29 @@ const adminReducer = (state = initialState, action) => {
         }
         case ADD_MENU_ITEM: {
             for (let i = 0; i < state.data.length; i++) {
-                console.log(state.data[i].restro);
-
-                if (state.data[i] === action.payload.restro)
-                    console.log(state.data[i]);
+                if (state.data[i].restro === action.payload.restro) {
+                    state.data[i].menu.push({
+                        name: action.payload.name,
+                        description: action.payload.description,
+                        image: action.payload.image,
+                        price: action.payload.price,
+                        category: action.payload.category,
+                        cod: action.payload.cod,
+                        rating: action.payload.rating
+                    });
+                    console.log(state.data[i].menu);
+                    return {
+                        ...state,
+                        data: [...state.data]
+                    };
+                }
             }
+        }
+        case PLACE_ORDER: {
+            return {
+                ...state,
+                orders: [...state.orders, ...action.payload]
+            };
         }
         default:
             return state;
