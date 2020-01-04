@@ -11,40 +11,47 @@ function Card(props) {
         image
     } = props.data;
     return (
-        <div className="col-md-4" key={name}>
-            <div className="card container m-2">
-                <div className="row p-2">
-                    <div className="col-6">
-                        <img src={image} className="img-fluid " />
-                        <p className="text-muted m-0">{category}</p>
+        <div className="col-12 col-md-4" key={name}>
+            <div className="card m-2">
+                <div className="card-header">
+                    <img
+                        src={image}
+                        className="card-img-top img-fluid p-2"
+                        style={{ height: "300px" }}
+                    />
+                </div>
+                <div className="card-body text-left">
+                    <h3 className="card-title text-danger">{name}</h3>
+                    <p className="card-text text-success">Price: Rs.{price}</p>
+                    <p className="card-text">{description}</p>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-4">
+                                <p className="text-muted">
+                                    Category: {category}
+                                </p>
+                            </div>
+                            <div className="col-lg-4">
+                                {cod ? (
+                                    <p>COD available</p>
+                                ) : (
+                                    <p className="text-muted">
+                                        COD not available
+                                    </p>
+                                )}
+                            </div>
+                            <div className="col-lg-4">
+                                <h5>
+                                    <span className="badge badge-success">
+                                        {rating}
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-6 text-left">
-                        <h3 className="text-danger">{name}</h3>
-
-                        <p className="text-success  m-0">Price: Rs.{price}</p>
-
-                        {cod ? (
-                            <p>COD available</p>
-                        ) : (
-                            <p className="text-muted">COD not available</p>
-                        )}
-                        <h3>
-                            <span className="badge badge-success">
-                                {rating}
-                            </span>
-                        </h3>
-                    </div>
-                    {/* <div className="col-2" style={{ textAlign: "right" }}>
-                        <h3>
-                            <span className="badge badge-success">
-                                {rating}
-                            </span>
-                        </h3>
-                    </div> */}
                 </div>
 
                 <div className="card-footer ">
-                    <p className="text-muted m-0 text-left">{description}</p>
                     <button
                         className="btn d-flex flex-end"
                         onClick={() => props.add(props.restro, name, price)}
