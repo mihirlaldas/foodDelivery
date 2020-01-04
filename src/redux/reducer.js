@@ -44,9 +44,10 @@ const adminReducer = (state = initialState, action) => {
             };
         }
         case ADD_MENU_ITEM: {
-            for (let i = 0; i < state.data.length; i++) {
-                if (state.data[i].restro === action.payload.restro) {
-                    state.data[i].menu.push({
+            let newData = state.data.map(ele => ele);
+            for (let i = 0; i < newData.length; i++) {
+                if (newData[i].restro === action.payload.restro) {
+                    newData[i].menu.push({
                         name: action.payload.name,
                         description: action.payload.description,
                         image: action.payload.image,
@@ -55,10 +56,9 @@ const adminReducer = (state = initialState, action) => {
                         cod: action.payload.cod,
                         rating: action.payload.rating
                     });
-                    console.log(state.data[i].menu);
                     return {
                         ...state,
-                        data: [...state.data]
+                        data: [...newData]
                     };
                 }
             }
