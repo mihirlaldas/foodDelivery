@@ -40,6 +40,11 @@ export default function Navbar() {
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
+                        <Link to="/auth">
+                            <button className="btn btn-outline-primary my-2 my-sm-0">
+                                User Login
+                            </button>
+                        </Link>
                         <Link to="/dashboard">
                             <button className="btn btn-outline-success my-2 my-sm-0">
                                 Dashboard
